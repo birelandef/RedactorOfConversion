@@ -1,0 +1,47 @@
+@(title: String)(content: Html)
+
+<!doctype html>
+<html lang="ru" ng-app="propertiesApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Redactor of conversions</title>
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")"/>
+        @*<link rel='stylesheet' href="@routes.WebJarAssets.at(WebJarAssets.locate("lib/angular/angular.js"))"/>*@
+        @*<link rel="stylesheet" href="@routes.WebJarAssets.at(WebJarAssets.locate("lib/angular/angular.js"))" />*@
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"> </script>
+        <script src="@routes.Assets.at("javascripts/controllers.js")" type="text/javascript"></script>
+    </head>
+    <body ng-controller='PropertiesListCtrl'>
+        <div class="b-container">
+            Sample Text
+        </div>
+        <div class="b-popup">
+
+            <div class="block1" align="left">
+                <h1 align="center">Input properties</h1>
+                <ul>
+                    <li ng-repeat="property in properties" >
+                        <p><a class='button' href='' ng-click='select(property)'> {{property.name}}  </a></p>
+                        <p><a class='button' href='' ng-click='select(property)'> {{property.name}} </a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="block2" align="right">
+                <h1 align="center" >Output properties</h1>
+                <ul>
+                    <li ng-repeat="property in properties" >
+                        <p><a class='button' href='' ng-click='select(property)'> {{property.name}} </a></p>
+                        <p><a class='button' href='' ng-click='select(property)'> {{property.name}} </a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="block3" align="center" >
+                <p><a class='button' href='' ng-click='processed()'> Processed </a></p>
+            </div>
+            <div class="b-popup-content">
+                You don't choose two views.properties
+            </div>
+        </div>
+
+    </body>
+</html>
