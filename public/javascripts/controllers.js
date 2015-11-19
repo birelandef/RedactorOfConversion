@@ -1,17 +1,17 @@
 var propertiesApp = angular.module('propertiesApp', []);
 
-//propertiesApp.controller('PropertiesListCtrl', function ($scope) {
-//    $scope.views.properties = [
-//        {name: 'Property1'},
-//        {name: 'Property2'},
-//        {name: 'Property3'}
-//    ];
+propertiesApp.controller('PropertiesListCtrl', function ($scope) {
+    $scope.properties = [
+        {name: 'Property1'},
+        {name: 'Property2'},
+        {name: 'Property3'}
+    ];
 
-    propertiesApp.controller('PropertiesListCtrl', ['$scope', '$http',
-        function ($scope, $http) {
-            $http.get("properties/properties.json").success(function(data) {
-                $scope.properties = data;
-            });
+    //propertiesApp.controller('PropertiesListCtrl', ['$scope', '$http',
+    //    function ($scope, $http) {
+    //        $http.get("properties/properties.json").success(function(data) {
+    //            $scope.properties = data;
+    //        });
 
 
     $scope.selectedProperties = [ ];
@@ -30,5 +30,7 @@ var propertiesApp = angular.module('propertiesApp', []);
     $scope.showError = function() {
         //TODO всплывающее окно
     };
-}]);
+}
+)
+//]);
 

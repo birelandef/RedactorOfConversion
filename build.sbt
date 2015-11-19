@@ -13,7 +13,7 @@ unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/
 libraryDependencies ++= Seq(
   cache,
   ws,
-  "org.webjars" %% "webjars-play" % "2.4.0-1",
+  "org.webjars" %% "webjars-play" % "2.3.0-3",
   "org.webjars.bower" % "angular" % "1.4.7",
   "org.webjars" % "jquery" % "2.1.1",
   "org.webjars" % "bootstrap" % "3.2.0-2",
