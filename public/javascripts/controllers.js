@@ -1,18 +1,15 @@
 var propertiesApp = angular.module('propertiesApp', []);
 
-propertiesApp.controller('PropertiesListCtrl', function ($scope) {
+propertiesApp.controller('PropertiesListCtrl',['$scope', 'propertiesFromJson', function ($scope, propertiesFromJson) {
     $scope.properties = [
         {name: 'Property1'},
         {name: 'Property2'},
         {name: 'Property3'}
     ];
 
-    //propertiesApp.controller('PropertiesListCtrl', ['$scope', '$http',
-    //    function ($scope, $http) {
-    //        $http.get("properties/properties.json").success(function(data) {
-    //            $scope.properties = data;
-    //        });
-
+    $scope.dataFromJson = propertiesFromJson.success(function(data) {
+    $scope.dataFromJson = data;
+    });
 
     $scope.selectedProperties = [ ];
 
@@ -30,7 +27,6 @@ propertiesApp.controller('PropertiesListCtrl', function ($scope) {
     $scope.showError = function() {
         //TODO всплывающее окно
     };
-}
-)
-//]);
+
+}]);
 

@@ -10,18 +10,15 @@
         <script src="@routes.WebJarAssets.at(WebJarAssets.locate("angular.js"))" type="text/javascript"></script>
         <script src="@routes.WebJarAssets.at(WebJarAssets.locate("angular-route.js"))" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/controllers.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/propertiesFactory.js")" type="text/javascript"></script>
     </head>
-    <body ng-controller='PropertiesListCtrl'>
-        <div class="b-container">
-            Sample Text
-        </div>
+    <body ng-app='propertiesApp' ng-controller='PropertiesListCtrl'>
         <div class="b-popup">
 
             <div class="block1" align="left">
                 <h1 align="center">Input properties</h1>
                 <ul>
-                    <li ng-repeat="property in properties" >
-                        <p><a class='button' href='' ng-click='select(property)'> {{property.name}}  </a></p>
+                    <li ng-repeat="property in dataFromJson.properties">
                         <p><a class='button' href='' ng-click='select(property)'> {{property.name}} </a></p>
                     </li>
                 </ul>
@@ -29,8 +26,7 @@
             <div class="block2" align="right">
                 <h1 align="center" >Output properties</h1>
                 <ul>
-                    <li ng-repeat="property in properties" >
-                        <p><a class='button' href='' ng-click='select(property)'> {{property.name}} </a></p>
+                    <li ng-repeat="property in dataFromJson.properties">
                         <p><a class='button' href='' ng-click='select(property)'> {{property.name}} </a></p>
                     </li>
                 </ul>
